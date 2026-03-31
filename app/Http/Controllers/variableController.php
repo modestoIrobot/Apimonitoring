@@ -136,7 +136,7 @@ public function update(Request $request,page $page, $id)
                         }
                     }
                 }
-                if($bool){
+                if($bool || ($request->value === $variable->value)){
                     $updated = $variable->fill($request->all())->save();
         
                     if ($updated)

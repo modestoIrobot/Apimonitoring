@@ -36,7 +36,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('{project}/fonctionsProject', [UserController::class, 'fonctionsByProject']);
     Route::get('{project}/variablesProject', [UserController::class, 'variablesByProject']);
     Route::middleware('is_admin')->group(function () {
-        Route::get('AdminUsers', [AdminController::class, 'users']);
+        Route::get('AdminUsers/{id}', [AdminController::class, 'users']);
         Route::get('AdminUser/{id}', [AdminController::class, 'getUserById']);
         Route::get('AdminProject/{user}/{id}', [AdminController::class, 'getProjectById']);
         Route::get('AdminProjects', [AdminController::class, 'projects']);

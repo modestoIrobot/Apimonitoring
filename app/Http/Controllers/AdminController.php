@@ -10,9 +10,9 @@ use App\Models\Project;
 class AdminController extends Controller
 {
     
-    public function users ()
+    public function users ($id)
     {
-        $users = User::where('id', '!=', auth()->id())->get();
+        $users = User::where([ ['id', '!=', auth()->id()], ['id', '!=', $id] ])->get();
         if($users)
             return response()->json([
                 'users' => $users,

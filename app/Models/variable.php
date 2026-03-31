@@ -14,6 +14,7 @@ class variable extends Model
         'page_path',
         'value',
         'description',
+        'configuration',
     ];
 
     public function page() {
